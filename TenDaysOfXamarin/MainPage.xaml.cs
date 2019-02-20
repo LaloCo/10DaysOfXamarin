@@ -13,5 +13,17 @@ namespace TenDaysOfXamarin
         {
             InitializeComponent();
         }
+
+        void Handle_Clicked(object sender, System.EventArgs e)
+        {
+            if(!string.IsNullOrWhiteSpace(nameEntry.Text))
+            {
+                greetingLabel.Text = $"Hello {nameEntry.Text}, welcome to 10 Days of Xamarin.";
+            }
+            else
+            {
+                DisplayAlert("Error", "Your name can't be empty", "Oh right");
+            }
+        }
     }
 }
