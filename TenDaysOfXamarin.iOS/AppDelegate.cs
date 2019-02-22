@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 
 using Foundation;
@@ -23,7 +24,12 @@ namespace TenDaysOfXamarin.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
-            LoadApplication(new App());
+
+            string fileName = "database.db3";
+            string folderPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "..", "Library");
+            string fullPath = Path.Combine(folderPath, fileName); //Added using System.IO;
+
+            LoadApplication(new App(fullPath));
 
             return base.FinishedLaunching(app, options);
         }
