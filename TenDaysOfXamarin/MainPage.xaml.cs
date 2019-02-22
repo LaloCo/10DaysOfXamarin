@@ -14,16 +14,32 @@ namespace TenDaysOfXamarin
             InitializeComponent();
         }
 
-        void Handle_Clicked(object sender, System.EventArgs e)
+        private void CheckIfShouldBeEnabled()
         {
-            if(!string.IsNullOrWhiteSpace(nameEntry.Text))
-            {
-                greetingLabel.Text = $"Hello {nameEntry.Text}, welcome to 10 Days of Xamarin.";
-            }
-            else
-            {
-                DisplayAlert("Error", "Your name can't be empty", "Oh right");
-            }
+            saveButton.IsEnabled = false;
+            if (!string.IsNullOrWhiteSpace(titleEntry.Text) && !string.IsNullOrWhiteSpace(contentEditor.Text))
+                saveButton.IsEnabled = true;
+        }
+
+        void TitleEntry_TextChanged(object sender, Xamarin.Forms.TextChangedEventArgs e)
+        {
+            CheckIfShouldBeEnabled();
+        }
+
+        void ContentEditor_TextChanged(object sender, Xamarin.Forms.TextChangedEventArgs e)
+        {
+            CheckIfShouldBeEnabled();
+        }
+
+        void SaveButton_Clicked(object sender, System.EventArgs e)
+        {
+            titleEntry.Text = string.Empty;
+            contentEditor.Text = string.Empty;
+        }
+
+        void ContentEntry_Clicked(object sender, System.EventArgs e)
+        {
+
         }
     }
 }
