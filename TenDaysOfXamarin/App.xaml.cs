@@ -7,7 +7,7 @@ namespace TenDaysOfXamarin
 {
     public partial class App : Application
     {
-        public string DatabasePath;
+        public static string DatabasePath;
 
         public App(string databasePath)
         {
