@@ -65,7 +65,7 @@ namespace TenDaysOfXamarin
 
         void ContentEntry_Clicked(object sender, System.EventArgs e)
         {
-
+            Navigation.PopAsync();
         }
     }
 }

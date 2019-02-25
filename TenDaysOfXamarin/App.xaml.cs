@@ -1,4 +1,5 @@
 ﻿using System;
+using TenDaysOfXamarin.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -13,16 +14,16 @@ namespace TenDaysOfXamarin
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
-
             DatabasePath = databasePath;
+
+            MainPage = new NavigationPage(new ExperiencesPage()); // added using TenDaysOfXamarin.Views;
         }
 
         public App()
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new NavigationPage(new ExperiencesPage());
         }
 
         protected override void OnStart()
