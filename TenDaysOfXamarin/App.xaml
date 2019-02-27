@@ -28,5 +28,17 @@
             <Setter Property="PlaceholderColor" Value="{StaticResource secondaryColor}"/>
             <Setter Property="TextColor" Value="{StaticResource blackColor}"/>
         </Style>
+        <Style TargetType="Label" x:Key="titleLabelStyle">
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="TextColor" Value="{StaticResource blackColor}"/>
+        </Style>
+        <Style TargetType="Label" x:Key="subtitleLabelStyle">
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="TextColor" Value="{StaticResource mainColor}"/>
+        </Style>
+        <Style TargetType="Label" x:Key="detailLabelStyle">
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="TextColor" Value="{StaticResource accentColor}"/>
+        </Style>
     </Application.Resources>
 </Application>

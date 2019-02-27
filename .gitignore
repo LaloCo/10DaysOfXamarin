@@ -39,3 +39,6 @@ Thumbs.db
 
 # dotCover
 *.dotCover
+
+# Private key files
+[Hh]elpers/[Cc]onstants.cs

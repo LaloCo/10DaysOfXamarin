@@ -8,6 +8,32 @@
                TextChanged="TitleEntry_TextChanged"
                Style="{StaticResource mainEntryStyle}"
                Placeholder="Title of the experience"/>
+        
+        <Entry x:Name="searchEntry"
+               Style="{StaticResource mainEntryStyle}"
+               Placeholder="Search a nearby venue..."
+               TextChanged="SearchEntry_TextChanged"/>
+        <ListView x:Name="venuesListView"
+                  ItemSelected="Handle_ItemSelected"
+                  HeightRequest="20"
+                  Margin="-16,0">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding name}"
+                              Detail="{Binding location.distance, StringFormat='{0} meters away'}"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <StackLayout x:Name="selectedVenueStackLayout"
+                     IsVisible="false">
+            <Label x:Name="venueNameLabel"
+                   Style="{StaticResource titleLabelStyle}"/>
+            <Label x:Name="venueCategoryLabel"
+                   Style="{StaticResource subtitleLabelStyle}"/>
+            <Label x:Name="venueCoordinatesLabel"
+                   Style="{StaticResource detailLabelStyle}"/>
+        </StackLayout>
+        
         <Editor x:Name="contentEditor"
                 TextChanged="ContentEditor_TextChanged"
                 Style="{StaticResource mainEditorStyle}"

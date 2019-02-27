@@ -17,6 +17,14 @@ namespace TenDaysOfXamarin.Model
 
         public DateTime UpdatedAt { get; set; }
 
+        public string VenueName { get; set; }
+
+        public string VenueCategory { get; set; }
+
+        public float VenueLat { get; set; }
+
+        public float VenueLng { get; set; }
+
         public override string ToString()
         {
             return Title;
