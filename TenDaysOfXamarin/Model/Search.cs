@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Collections.Generic;
 
 namespace TenDaysOfXamarin.Model
@@ -25,6 +26,12 @@ namespace TenDaysOfXamarin.Model
         public string cc { get; set; }
         public string country { get; set; }
         public IList<string> formattedAddress { get; set; }
+
+        private string coordinates;
+        public string Coordinates
+        {
+            get { return $"{lat:0.000}, {lng:0.000}"; }
+        }
     }
 
     public class Icon
@@ -51,6 +58,13 @@ namespace TenDaysOfXamarin.Model
         public IList<Category> categories { get; set; }
         public string referralId { get; set; }
         public bool hasPerk { get; set; }
+
+        private string mainCategory;
+        public string MainCategory
+        {
+            // added using System.Linq;
+            get { return categories.FirstOrDefault()?.name; }
+        }
     }
 
     public class Response
