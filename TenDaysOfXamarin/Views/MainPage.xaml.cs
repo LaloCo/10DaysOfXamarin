@@ -117,6 +117,9 @@ namespace TenDaysOfXamarin
             {
                 titleEntry.Text = string.Empty;
                 contentEditor.Text = string.Empty;
+                venueNameLabel.Text = string.Empty;
+                venueCategoryLabel.Text = string.Empty;
+                venueCoordinatesLabel.Text = string.Empty;
             }
             else
             {
