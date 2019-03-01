@@ -80,46 +80,6 @@ namespace TenDaysOfXamarin
             await locator.StartListeningAsync(TimeSpan.FromMinutes(30), 500);
         }
 
-        void SaveButton_Clicked(object sender, System.EventArgs e)
-        {
-            // added using TenDaysOfXamarin.Model;
-            Experience newExperience = new Experience()
-            {
-                Title = viewModel.Title,
-                Content = viewModel.Content,
-                CreatedAt = DateTime.Now,
-                UpdatedAt = DateTime.Now,
-                VenueName = viewModel.SelectedVenue.name,
-                VenueCategory = viewModel.SelectedVenue.MainCategory,
-                VenueLat = float.Parse(viewModel.SelectedVenue.location.Coordinates.Split(',')[0]),
-                VenueLng = float.Parse(viewModel.SelectedVenue.location.Coordinates.Split(',')[1])
-            };
-
-            int insertedItems = 0;
-            // added using SQLite;
-            using (SQLiteConnection conn = new SQLiteConnection(App.DatabasePath))
-            {
-                conn.CreateTable<Experience>();
-                insertedItems = conn.Insert(newExperience);
-            }
-            // here the conn has been disposed of, hence closed
-            if (insertedItems > 0)
-            {
-                viewModel.Title = string.Empty;
-                viewModel.Content = string.Empty;
-                viewModel.SelectedVenue = null;
-            }
-            else
-            {
-                DisplayAlert("Error", "There was an error inserting the Experience, please try again", "Ok");
-            }
-        }
-
-        void CancelButton_Clicked(object sender, System.EventArgs e)
-        {
-            Navigation.PopAsync();
-        }
-
         async void SearchEntry_TextChanged(object sender, Xamarin.Forms.TextChangedEventArgs e)
         {
             if (!string.IsNullOrWhiteSpace(viewModel.Query))

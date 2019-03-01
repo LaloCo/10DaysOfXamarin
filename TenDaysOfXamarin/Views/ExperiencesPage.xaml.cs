@@ -30,10 +30,5 @@ namespace TenDaysOfXamarin.Views
                 experiencesListView.ItemsSource = experiences;
             }
         }
-
-        void Handle_Clicked(object sender, System.EventArgs e)
-        {
-            Navigation.PushAsync(new MainPage());
-        }
     }
 }

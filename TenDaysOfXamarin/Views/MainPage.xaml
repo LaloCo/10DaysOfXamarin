@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              xmlns:local="clr-namespace:TenDaysOfXamarin"
              x:Class="TenDaysOfXamarin.MainPage">
+    
     <StackLayout Margin="16,20">
         <Entry Text="{Binding Title, Mode=TwoWay}"
                Style="{StaticResource mainEntryStyle}"
@@ -38,11 +39,11 @@
                 VerticalOptions="FillAndExpand"
                 Placeholder="Write your experience..."/>
         <Button Text="Save"
-                IsEnabled="{Binding CanSave}"
-                Clicked="SaveButton_Clicked"
+                Command="{Binding SaveCommand}"
+                CommandParameter="{Binding CanSave}"
                 Style="{StaticResource mainButtonStyle}"/>
         <Button Text="Cancel"
-                Clicked="CancelButton_Clicked"
+                Command="{Binding CancelCommand}"
                 Style="{StaticResource cancelButtonStyle}"/>
     </StackLayout>
 </ContentPage>

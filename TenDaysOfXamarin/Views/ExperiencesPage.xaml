@@ -1,10 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:TenDaysOfXamarin.ViewModels"
              x:Class="TenDaysOfXamarin.Views.ExperiencesPage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <vm:ExperiencesVM x:Key="vm"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="New"
-                     Clicked="Handle_Clicked"/>
+                     BindingContext="{StaticResource vm}"
+                     Command="{Binding NewExperienceCommand}"/>
     </ContentPage.ToolbarItems>
     
     <ContentPage.Content>
