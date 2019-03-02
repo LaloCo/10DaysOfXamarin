@@ -1,5 +1,44 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Application xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="TenDaysOfXamarin.App">
+<?xml version="1.0" encoding="utf-8"?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TenDaysOfXamarin.App">
     <Application.Resources>
+        <Color x:Key="mainColor">#326273</Color>
+        <Color x:Key="whiteColor">#EEEEEE</Color>
+        <Color x:Key="blackColor">#1C1C1C</Color>
+        <Color x:Key="accentColor">#4392F1</Color>
+        <Color x:Key="destructiveColor">#EF798A</Color>
+        <Color x:Key="secondaryColor">#BFBFBF</Color>
+        
+        <Style TargetType="Button" x:Key="mainButtonStyle">
+            <Setter Property="BackgroundColor" Value="{StaticResource accentColor}"/>
+            <Setter Property="TextColor" Value="{StaticResource whiteColor}"/>
+        </Style>
+        <Style TargetType="Button" x:Key="cancelButtonStyle" BasedOn="{StaticResource mainButtonStyle}">
+            <Setter Property="BackgroundColor" Value="{StaticResource secondaryColor}"/>
+        </Style>
+        <Style TargetType="Button" x:Key="deleteButtonStyle" BasedOn="{StaticResource mainButtonStyle}">
+            <Setter Property="BackgroundColor" Value="{StaticResource destructiveColor}"/>
+        </Style>
+        <Style TargetType="Entry" x:Key="mainEntryStyle">
+            <Setter Property="PlaceholderColor" Value="{StaticResource secondaryColor}"/>
+            <Setter Property="TextColor" Value="{StaticResource blackColor}"/>
+        </Style>
+        <Style TargetType="Editor" x:Key="mainEditorStyle">
+            <Setter Property="PlaceholderColor" Value="{StaticResource secondaryColor}"/>
+            <Setter Property="TextColor" Value="{StaticResource blackColor}"/>
+        </Style>
+        <Style TargetType="Label" x:Key="titleLabelStyle">
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="TextColor" Value="{StaticResource blackColor}"/>
+        </Style>
+        <Style TargetType="Label" x:Key="subtitleLabelStyle">
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="TextColor" Value="{StaticResource mainColor}"/>
+        </Style>
+        <Style TargetType="Label" x:Key="detailLabelStyle">
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="TextColor" Value="{StaticResource accentColor}"/>
+        </Style>
     </Application.Resources>
 </Application>

@@ -1,11 +1,11 @@
-﻿using System;
-
-using Android.App;
+﻿using Android.App;
 using Android.Content.PM;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using System.IO;
+using Plugin.Permissions;
 
 namespace TenDaysOfXamarin.Droid
 {
@@ -19,7 +19,20 @@ namespace TenDaysOfXamarin.Droid
 
             base.OnCreate(savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
-            LoadApplication(new App());
+            Plugin.CurrentActivity.CrossCurrentActivity.Current.Init(this, savedInstanceState);
+
+            string fileName = "database.db3";
+            string folderPath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments);
+            string fullPath = Path.Combine(folderPath, fileName); //Added using System.IO;
+
+            LoadApplication(new App(fullPath));
+        }
+
+        public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Permission[] grantResults)
+        {
+            // added using Plugin.Permissions;
+            PermissionsImplementation.Current.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+            base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
     }
 }

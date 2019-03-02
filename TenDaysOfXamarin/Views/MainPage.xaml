@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:local="clr-namespace:TenDaysOfXamarin"
+             x:Class="TenDaysOfXamarin.MainPage">
+    
+    <StackLayout Margin="16,20">
+        <Entry Text="{Binding Title, Mode=TwoWay}"
+               Style="{StaticResource mainEntryStyle}"
+               Placeholder="Title of the experience"/>
+        
+        <Entry Text="{Binding Query, Mode=TwoWay}"
+               Style="{StaticResource mainEntryStyle}"
+               Placeholder="Search a nearby venue..."/>
+        <ListView x:Name="venuesListView"
+                  ItemsSource="{Binding Venues}"
+                  IsVisible="{Binding ShowVenues}"
+                  SelectedItem="{Binding SelectedVenue, Mode=TwoWay}"
+                  HeightRequest="20"
+                  Margin="-16,0">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding name}"
+                              Detail="{Binding location.distance, StringFormat='{0} meters away'}"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <StackLayout IsVisible="{Binding ShowSelectedVenue}">
+            <Label Text="{Binding SelectedVenue.name}"
+                   Style="{StaticResource titleLabelStyle}"/>
+            <Label Text="{Binding SelectedVenue.MainCategory}"
+                   Style="{StaticResource subtitleLabelStyle}"/>
+            <Label Text="{Binding SelectedVenue.location.Coordinates}"
+                   Style="{StaticResource detailLabelStyle}"/>
+        </StackLayout>
+
+        <Editor Text="{Binding Content, Mode=TwoWay}"
+                Style="{StaticResource mainEditorStyle}"
+                VerticalOptions="FillAndExpand"
+                Placeholder="Write your experience..."/>
+        <Button Text="Save"
+                Command="{Binding SaveCommand}"
+                CommandParameter="{Binding CanSave}"
+                Style="{StaticResource mainButtonStyle}"/>
+        <Button Text="Cancel"
+                Command="{Binding CancelCommand}"
+                Style="{StaticResource cancelButtonStyle}"/>
+    </StackLayout>
+</ContentPage>

@@ -2,37 +2,43 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-    <key>UIDeviceFamily</key>
-    <array>
-        <integer>1</integer>
-        <integer>2</integer>
-    </array>
-    <key>UISupportedInterfaceOrientations</key>
-    <array>
-        <string>UIInterfaceOrientationPortrait</string>
-        <string>UIInterfaceOrientationLandscapeLeft</string>
-        <string>UIInterfaceOrientationLandscapeRight</string>
-    </array>
-    <key>UISupportedInterfaceOrientations~ipad</key>
-    <array>
-        <string>UIInterfaceOrientationPortrait</string>
-        <string>UIInterfaceOrientationPortraitUpsideDown</string>
-        <string>UIInterfaceOrientationLandscapeLeft</string>
-        <string>UIInterfaceOrientationLandscapeRight</string>
-    </array>
-    <key>MinimumOSVersion</key>
-    <string>8.0</string>
-    <key>CFBundleDisplayName</key>
-    <string>TenDaysOfXamarin</string>
-    <key>CFBundleIdentifier</key>
-    <string>com.lalorosas.TenDaysOfXamarin</string>
-    <key>CFBundleVersion</key>
-    <string>1.0</string>
-    <key>UILaunchStoryboardName</key>
-    <string>LaunchScreen</string>
-    <key>CFBundleName</key>
-    <string>TenDaysOfXamarin</string>
-    <key>XSAppIconAssets</key>
-    <string>Assets.xcassets/AppIcon.appiconset</string>
+	<key>UIDeviceFamily</key>
+	<array>
+		<integer>1</integer>
+		<integer>2</integer>
+	</array>
+	<key>UISupportedInterfaceOrientations</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationLandscapeLeft</string>
+		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
+	<key>UISupportedInterfaceOrientations~ipad</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationPortraitUpsideDown</string>
+		<string>UIInterfaceOrientationLandscapeLeft</string>
+		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
+	<key>MinimumOSVersion</key>
+	<string>8.0</string>
+	<key>CFBundleDisplayName</key>
+	<string>TenDaysOfXamarin</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.lalorosas.TenDaysOfXamarin</string>
+	<key>CFBundleVersion</key>
+	<string>1.0</string>
+	<key>UILaunchStoryboardName</key>
+	<string>LaunchScreen</string>
+	<key>CFBundleName</key>
+	<string>TenDaysOfXamarin</string>
+	<key>XSAppIconAssets</key>
+	<string>Assets.xcassets/AppIcon.appiconset</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>We will use your device&apos;s location to get nearby venues for the experiences to be pinned to the place where you had them.</string>
+	<key>NSBluetoothPeripheralUsageDescription</key>
+	<string>We may use Bluetooth Peripherals to understand what devices you use while saving an experience</string>
+	<key>NSCalendarsUsageDescription</key>
+	<string>We may use your calendar to create experiences based on current events</string>
 </dict>
 </plist>
