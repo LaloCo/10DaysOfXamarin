@@ -11,9 +11,9 @@
         
         <Entry Text="{Binding Query, Mode=TwoWay}"
                Style="{StaticResource mainEntryStyle}"
-               Placeholder="Search a nearby venue..."
-               TextChanged="SearchEntry_TextChanged"/>
+               Placeholder="Search a nearby venue..."/>
         <ListView x:Name="venuesListView"
+                  ItemsSource="{Binding Venues}"
                   IsVisible="{Binding ShowVenues}"
                   SelectedItem="{Binding SelectedVenue, Mode=TwoWay}"
                   HeightRequest="20"

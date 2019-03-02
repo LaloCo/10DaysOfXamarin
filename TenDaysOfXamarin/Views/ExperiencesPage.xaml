@@ -16,7 +16,7 @@
     </ContentPage.ToolbarItems>
     
     <ContentPage.Content>
-        <ListView x:Name="experiencesListView">
+        <ListView ItemsSource="{Binding Source={StaticResource vm}, Path=Experiences}">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <TextCell Text="{Binding Title}"

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using SQLite;
 
 namespace TenDaysOfXamarin.Model
@@ -24,6 +25,28 @@ namespace TenDaysOfXamarin.Model
         public float VenueLat { get; set; }
 
         public float VenueLng { get; set; }
+
+        public bool InsertExperience()
+        {
+            int insertedItems = 0;
+            using (SQLiteConnection conn = new SQLiteConnection(App.DatabasePath))
+            {
+                conn.CreateTable<Experience>();
+                insertedItems = conn.Insert(this);
+            }
+
+            return insertedItems > 0;
+        }
+
+        public static List<Experience> GetExperiences()
+        {
+            // added using System.Collections.Generic;
+            using (SQLiteConnection conn = new SQLiteConnection(App.DatabasePath))
+            {
+                conn.CreateTable<Experience>();
+                return conn.Table<Experience>().ToList();
+            }
+        }
 
         public override string ToString()
         {
