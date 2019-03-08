@@ -1,26 +1,39 @@
-# 10DaysOfXamarin
+![](https://gallery.mailchimp.com/28e4e4681c87e8eaa33e8b993/images/63142d24-f25b-43a8-8d6a-b2acd4e9a0b2.png)
 
-## Days
+# 10 Days.
+# 10 Challenges.
 
-1. *Greetings - XAML and Events*. Users must define a Label, an Entry and a Button. After writing something on the entry, they could click the button and see the Label change to a greeting with whatever they wrote on the Entry (eg. Their name). *Bonus*: display an alert if there is no text in the entry. 
+![](https://gallery.mailchimp.com/28e4e4681c87e8eaa33e8b993/images/a0dbb9d9-f176-4957-b716-f84efcabadd6.png)
 
-    [Day 1](https://www.notion.so/1992a315899c40d3ae6966b45dfe86ed)
+## Learn Xamarin and create Android and iOS apps that share C# code
+With Xamarin you can use C# to create Android and iOS apps. Plus, that C# codebase will be 100% shared between projects, and compile to native code, so performance is not impacted.
 
-2. *Adding experiences - XAML Styles*. Users must define an array of entries and buttons (save, cancel) that will allow users to “add” new experiences like diary entries (title and content will suffice). Also, users will be challenged to use XAML Styles to reuse some styling across Entries and Buttons. The save button should be disabled if an entry inside the form is empty.
+| Share C# Code | Create the UI with XAML |
+| ------------- |:-------------:|
+| ![](https://gallery.mailchimp.com/28e4e4681c87e8eaa33e8b993/images/a722cad0-c9aa-4aa5-b837-288bddc7fd28.png)     | ![](https://gallery.mailchimp.com/28e4e4681c87e8eaa33e8b993/images/154c94e8-721d-4d79-a1a5-37df1502d70a.png) |
+| Code your whole logic once, share it between the Android and iOS native projects.       | Xamarin translates your XAML code into native UI elements, so your apps feel native -because they are.      |
 
-    [Day 2](https://www.notion.so/913c0a1be30b41729de95b4d14420121)
+## Time to start learning
 
-3. *Platform specific code - SQLite Database*. Users will import the SQLite-net-PCL package into the projects and add the platform-specific code that will create the sqlite database in different locations for iOS and Android.
+| SQLite        | REST          | MVVM  |
+| ------------- |:-------------:| -----:|
+| ![](https://gallery.mailchimp.com/28e4e4681c87e8eaa33e8b993/images/93298bc7-0be4-44cb-b99a-6a20bc8fe5ac.png)      | ![](https://gallery.mailchimp.com/28e4e4681c87e8eaa33e8b993/images/b033daad-4c6a-4517-a9ad-7ed50012d1d8.png) | ![](https://gallery.mailchimp.com/28e4e4681c87e8eaa33e8b993/images/7ac7971a-bde9-42b8-ae7d-6703a28465c2.png) |
+| Learn to define the user interface using XAML, handle user interactions using C#, use a local database to store and retrieve data, and list all the information.      | Get the device's location and use it to get a list of nearby venues using the Foursquare REST API and HTTP requests. Then update the SQLite table with that info.      |   Clean your code by implementing the MVVM architectural pattern and feel like an expert using Binding, Commands and Observable Collections. |
 
-    [Day 3](https://www.notion.so/b8984192928f4e9b84bcee3a1c678885)
+## Day by Day
 
-4. *Inserting Experiences - Inserting into a table*. Users will create a class that will define an experience, and define the class with a couple of SQLite attributes, for then connect to the database and insert into it.
+![](https://gallery.mailchimp.com/28e4e4681c87e8eaa33e8b993/images/2d97cdac-c041-46d6-b108-6d81bdbaad3c.png)
 
-    [Day 4](https://www.notion.so/92dee893956f467bbd6feb753b1e4766)
+Curious about what you will learn? Here is the list of topics that we cover day by day:
+1. **XAML and Events.** Defining the interface and handling user interactions.
+2. **Using XAML Styles.** Reusing XAML code with Style Resources.
+3. **Creating an SQLite Database.** Prepare the projects to use SQLite and get the file's path.
+4. **Inserting to the Database.** Model the database table, create a connection and start adding elements to the table.
+5. **Reading and Listing a Table.** Read the database table and list the retrieved elements in a ListView.
+6. **Getting the User's Location.** Get the user's permission to access location, then get the coordinates.
+7. **Making REST Requests.** Make HTTP requests to Foursquare's REST API to get nearby venues.
+8. **The INotifyPropertyChanged interface.** Implement the interface to notify the view of property changes.
+9. **Defining and Binding Commands.** Substitute event handlers with Commands.
+10. **Using Observable Collections.** Notify the view of collection changes with the ObservableCollection<T> class.
 
-5. *Listing Experiences - Reading from the table and using ListViews*. Users will read from the SQLite table and learn to list the elements inside a ListView using simple ListView.ItemsSource through C# (no MVVM binding yet)
-6. *Getting the location of the device - GPS*. Users must setup their projects to be able to access the location of the device and get the coordinates in each platform using shared code.
-7. *Getting Nearby Venues - REST APIs*. By using the free version of the Foursquare Places API, and the coordinates obtained in the previous challenge, users will be able to get nearby places and list them using a ListView. Updates to the experience model are in order, to fit the new data (selected venue).
-8. *MVVM Part 1 - INotifyPropertyChanged*. Using the INotifyPropertyChanged, users will clean the code that is being used to save experiences. Instead of manually assigning the value to the properties of a new Experience, this will happen through binding with a new VM class.
-9. *MVVM Part 2 - ICommand*. Using the ICommand interface, users will now clean up event handlers and form evaluations (for button enabling/disabling).
-10. *MVVM Part 3 - ObservableCollection<T>*. Finally, some more binding is going to happen so the source of the ListViews is easily updated.
+Want the daily challenges delivered to your inbox? [Register to the Email List](https://join.10daysofxamarin.blog/landing)
