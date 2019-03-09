@@ -69,9 +69,11 @@ I also set a placeholder for the entry, so users know what they are supposed to 
 
 Handling the click of a button requires a couple of steps to be completed. The first one is to set the event handler for the Click event of the button. I usually do this from XAML, but you could also do this from C#. The second step is to define that event handler, which I will create as a method. Notice though that Intellisense helps you with this second step as soon as you complete the first:
 
-[](https://www.notion.so/1992a315899c40d3ae6966b45dfe86ed#ad6c7b69795e43f3b2715d6bf1bcca73)
+### Creating an event handler on Windows
+![](https://10daysofxamarin.files.wordpress.com/2019/03/day1-eventhandlerwindows.gif)
 
-[](https://www.notion.so/1992a315899c40d3ae6966b45dfe86ed#2d24a61e9b4446fc8ed770c7b2071a20)
+### Creating an event handler on Windows
+![](https://10daysofxamarin.files.wordpress.com/2019/03/day1-eventhandlermac.gif)
 
 So your button now looks like this:
 
