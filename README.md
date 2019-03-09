@@ -36,7 +36,7 @@ If the Entry has no text, the label should not change. Instead, the app should d
 
 Your project before implementing this solution:
 
-[LaloCo/10DaysOfXamarin](https://github.com/LaloCo/10DaysOfXamarin/tree/Day1/initial)
+[Initial source code](/LaloCo/10DaysOfXamarin/tree/Day1/initial)
 
 ## Defining the Interface
 
@@ -126,7 +126,7 @@ Of course, the result will be identical (but rendered natively) on Android:
 
 So there you have it, your Day 1 challenge is now complete.
 
-[LaloCo/10DaysOfXamarin](https://github.com/LaloCo/10DaysOfXamarin/tree/Day1/final)
+[Check final source code](/LaloCo/10DaysOfXamarin/tree/Day1/final)
 
 # Learn more
 
