@@ -46,12 +46,14 @@ Defining these three elements will be quite straight forward, but you do need to
 
 Some templates will already contain a StackLayout, so change the Label that is there by default for the three required elements:
 
-    <StackLayout Margin="16,20,16,0">
-        <Entry Placeholder="Enter your name"/>
-        <Button Text="Say hello"/>
-        <Label Text="Hello stranger, welcome to 10 Days of Xamarin."
-               FontSize="20"/>
-    </StackLayout>
+``` xml
+<StackLayout Margin="16,20,16,0">
+    <Entry Placeholder="Enter your name"/>
+    <Button Text="Say hello"/>
+    <Label Text="Hello stranger, welcome to 10 Days of Xamarin."
+           FontSize="20"/>
+</StackLayout>
+```
 
 This definition will be enough for you to see on the designer (included on Visual Studio) how your app will look when running.
 
@@ -73,13 +75,16 @@ Handling the click of a button requires a couple of steps to be completed. The f
 
 So your button now looks like this:
 
-    <Button Clicked="Handle_Clicked"
-            Text="Say hello"/>
+``` xml
+<Button Clicked="Handle_Clicked"
+        Text="Say hello"/>
+```
 
 So you now have a new method over in the C# file for this same Page: the event handler for the click of the button. This method is where you will create the functionality. Now before we jump over to that file, there is one final thing we need to do in the XAML file. It turns out that, if we want to be able to access the defined elements from C# (which we will need to do since we need the text in the entry and to change the label's text) they need to have a name.
 
 We don't need to name the button, because we won't need to get or set any of its properties from the code behind, but the other two elements will need to set the Name property:
 
+``` xml
     <Entry x:Name="nameEntry"
            Placeholder="Enter your name"/>
     <Button Clicked="Handle_Clicked"
@@ -87,6 +92,7 @@ We don't need to name the button, because we won't need to get or set any of its
     <Label x:Name="greetingLabel"
            Text="Hello stranger, welcome to 10 Days of Xamarin."
            FontSize="20"/>
+```
 
 Notice the naming convention. Ours is a simple-enough interface, but as your interfaces grow more complicated, the naming convention becomes more and more critical, which is why you should always try to use a naming convention that helps you quickly identify elements from each other. Here, for example, I not only identify each element with its basic functionality (name and greeting) but by its type also (entry and label). Feel free to use this same naming convention or another that you may find useful.
 
@@ -96,33 +102,31 @@ All that is left for us to do is display the greeting then. A couple of things a
 
 You should also not forget to check if the entry has text in it, and display an error message if it doesn't.
 
-    void Handle_Clicked(object sender, System.EventArgs e)
+``` csharp
+void Handle_Clicked(object sender, System.EventArgs e)
+{
+    if(!string.IsNullOrWhiteSpace(nameEntry.Text))
     {
-        if(!string.IsNullOrWhiteSpace(nameEntry.Text))
-        {
-            greetingLabel.Text = $"Hello {nameEntry.Text}, welcome to 10 Days of Xamarin.";
-        }
-        else
-        {
-            DisplayAlert("Error", "Your name can't be empty", "Oh right");
-        }
+        greetingLabel.Text = $"Hello {nameEntry.Text}, welcome to 10 Days of Xamarin.";
     }
+    else
+    {
+        DisplayAlert("Error", "Your name can't be empty", "Oh right");
+    }
+}
+```
 
 If you were to test your app now, you should see something like this:
 
-[](https://www.notion.so/1992a315899c40d3ae6966b45dfe86ed#0afd32fe6011410590e00068c1a7f9c6)
-
-[](https://www.notion.so/1992a315899c40d3ae6966b45dfe86ed#a2ba254d0d23464fa2e5679fa86c52bf)
-
-[](https://www.notion.so/1992a315899c40d3ae6966b45dfe86ed#006919c297a84d6b8990a5a3c8ee6431)
+| Image 1        | Image 2           | Image 3  |
+| ------------- |:-------------:| -----:|
+| ![](https://10daysofxamarin.files.wordpress.com/2019/03/day1-001.png)      | ![](https://10daysofxamarin.files.wordpress.com/2019/03/day1-002-1.png) | ![](https://10daysofxamarin.files.wordpress.com/2019/03/day1-003-1.png) |
 
 Of course, the result will be identical (but rendered natively) on Android:
 
-[](https://www.notion.so/1992a315899c40d3ae6966b45dfe86ed#6cd45006e584475f871e72795d4ff3be)
-
-[](https://www.notion.so/1992a315899c40d3ae6966b45dfe86ed#ee48354436734c189d2d48e6685ea5f3)
-
-[](https://www.notion.so/1992a315899c40d3ae6966b45dfe86ed#4ecfdc3ea0c94c38b9b526bc2698181c)
+| Image 4        | Image 5           | Image 6  |
+| ------------- |:-------------:| -----:|
+| ![](https://10daysofxamarin.files.wordpress.com/2019/03/day1-004.png)      | ![](https://10daysofxamarin.files.wordpress.com/2019/03/day1-005.png) | ![](https://10daysofxamarin.files.wordpress.com/2019/03/day1-006.png) |
 
 So there you have it, your Day 1 challenge is now complete.
 
