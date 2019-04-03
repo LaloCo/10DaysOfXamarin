@@ -4,9 +4,11 @@ By now you should have your environment setup and ready to start creating your f
 
 So let's start by creating our first Xamarin app. The process is slightly different depending on the Operating System that you are currently using. So check the corresponding video below to follow the steps to create the project on macOS or Windows.
 
-[https://www.youtube.com/watch?v=a2voTRVe4Es](https://www.youtube.com/watch?v=a2voTRVe4Es)
+[Creating on Windows](https://www.youtube.com/watch?v=a2voTRVe4Es)
 
-[https://www.youtube.com/watch?v=wZOhxb5pvUw](https://www.youtube.com/watch?v=wZOhxb5pvUw)
+[Creating on macOS](https://www.youtube.com/watch?v=wZOhxb5pvUw)
+
+[Creating on Windows with VS 2019](https://youtu.be/XH5Dnp5Li74)
 
 # Challenge
 
