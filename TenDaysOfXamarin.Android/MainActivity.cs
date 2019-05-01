@@ -6,6 +6,7 @@ using Android.Widget;
 using Android.OS;
 using System.IO;
 using Plugin.Permissions;
+using Microsoft.WindowsAzure.MobileServices;
 
 namespace TenDaysOfXamarin.Droid
 {
@@ -20,6 +21,7 @@ namespace TenDaysOfXamarin.Droid
             base.OnCreate(savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             Plugin.CurrentActivity.CrossCurrentActivity.Current.Init(this, savedInstanceState);
+            CurrentPlatform.Init();
 
             string fileName = "database.db3";
             string folderPath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments);

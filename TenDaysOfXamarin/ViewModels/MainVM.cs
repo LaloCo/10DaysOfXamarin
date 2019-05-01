@@ -153,7 +153,7 @@ namespace TenDaysOfXamarin.ViewModels
             return arg;
         }
 
-        void SaveAction(bool obj)
+        async void SaveAction(bool obj)
         {
             Experience newExperience = new Experience()
             {
@@ -167,7 +167,7 @@ namespace TenDaysOfXamarin.ViewModels
                 VenueLng = float.Parse(SelectedVenue.location.Coordinates.Split(',')[1])
             };
 
-            bool insertSuccessful = newExperience.InsertExperience();
+            bool insertSuccessful = await newExperience.InsertExperience();
 
             // here the conn has been disposed of, hence closed
             if (insertSuccessful)

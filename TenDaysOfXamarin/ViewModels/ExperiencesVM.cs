@@ -27,10 +27,10 @@ namespace TenDaysOfXamarin.ViewModels
             App.Current.MainPage.Navigation.PushAsync(new MainPage());
         }
 
-        public void ReadExperiences()
+        public async void ReadExperiences()
         {
             // added using TenDaysOfXamarin.Model;
-            var experiences = Experience.GetExperiences();
+            var experiences = await Experience.GetExperiences();
 
             Experiences.Clear();
             foreach(var experience in experiences)

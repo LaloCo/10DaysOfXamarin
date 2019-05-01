@@ -1,4 +1,10 @@
-﻿using System;
+﻿#define OFFLINE_SYNC_ENABLED
+
+using System;
+using Microsoft.WindowsAzure.MobileServices.SQLiteStore;
+using Microsoft.WindowsAzure.MobileServices.Sync;
+using TenDaysOfXamarin.Helpers;
+using TenDaysOfXamarin.Model;
 using TenDaysOfXamarin.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -17,6 +23,12 @@ namespace TenDaysOfXamarin
             DatabasePath = databasePath;
 
             MainPage = new NavigationPage(new ExperiencesPage()); // added using TenDaysOfXamarin.Views;
+
+            var store = new MobileServiceSQLiteStore(databasePath);
+            store.DefineTable<Experience>();
+
+            AzureHelper.MobileService.SyncContext.InitializeAsync(store, AzureHelper.MobileService.SyncContext.Handler);
+            AzureHelper.experienceTable = AzureHelper.MobileService.GetSyncTable<Experience>();
         }
 
         public App()
